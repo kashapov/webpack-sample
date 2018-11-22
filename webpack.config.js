@@ -7,6 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
+    chunkFilename: "[id].js",
     publicPath: ""
   },
   resolve: {
@@ -17,7 +18,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: "babel-loader",
-        exlude: /node_modules/
+        exclude: /node_modules/
       },
       {
         test: /\.css$/,
@@ -43,7 +44,7 @@ module.exports = {
             }
           }
         ],
-        exlude: /node_modules/
+        exclude: /node_modules/
       },
       {
         test: /\.(png|jpe?g|gif)$/,
